@@ -1,122 +1,122 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
     <ion-title>
-      CALCULADORA DE FEIRA
+      CALCULATOR
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
   <div class="ion-padding-center">
-    <ion-input class="display" type="text">
-      1
-    </ion-input>
+    <ion-label dir="rtl" class="ion-text-end">
+    <ion-input class="display" type="text" [value]="expressao" readonly></ion-input>
+    </ion-label>
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="limpar()">
             AC
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue(')')">
             (
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('(')">
             )
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('/')">
             /
           </ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('7')">
             7
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('8')">
             8
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('9')">
             9
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('*')">
             *
           </ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('4')">
             4
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('5')">
             5
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('6')" l>
             6
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('-')">
             -
           </ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('1')">
             1
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('2')">
             2
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('3')">
             3
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('+')">
             +
           </ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('0')">
             0
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="addValue('.')">
             .
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="primary">
+          <ion-button shape="round" color="medium" (click)="bck()">
             bck
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button shape="round" color="danger">
+          <ion-button shape="round" color="danger" (click)="calcular()">
             =
           </ion-button>
         </ion-col>

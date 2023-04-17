@@ -9,58 +9,43 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class HomePage {
-  expressao: string;
-  resultado: number;
+  expressao: any;
+  resultado: any;
+
   constructor() {
-    this.expressao = '';
-    this.resultado = 0 ;
+    this.expressao = '0';
+    this.resultado = '';
   }
-  limpar(){
-    this.expressao = '';
+
+  limpar() {
+    this.expressao = '0';
+    this.resultado = '';
   }
-  addNove(){
-    this.expressao += '9';
+
+  addValue(value: any) {
+    if (this.expressao === '0') {
+      this.expressao = value;
+    }else {
+      this.expressao += value;
+    }
   }
-  addOito(){
-    this.expressao += '8';
+
+  bck() {
+    if (this.expressao.length === 1) {
+      this.expressao = '0';
+    } else if (this.expressao !== '' && this.calcular() === this.expressao) {
+      this.limpar();
+    } else {
+      let novaExpressao = this.expressao.split('');
+      novaExpressao.pop();
+      this.expressao = novaExpressao.join('');
+    }
+  };
+
+  calcular() {
+    if (this.expressao !== '' && this.expressao !== '0') {
+      this.expressao = eval(this.expressao);
+      return this.expressao;
+    }
   }
-  addSete(){
-    this.expressao += '7';
-  }
-  addSeis(){
-    this.expressao += '6';
-  }
-  addCinco(){
-    this.expressao += '5';
-  }
-  addQuatro(){
-    this.expressao += '4';
-  }
-  addTres(){
-    this.expressao += '3';
-  }
-  addDois(){
-    this.expressao += '2';
-  }
-  addUm(){
-    this.expressao += '1';
-  }
-  soma(){
-    this.expressao += '+';
-  }
-  subtracao(){
-    this.expressao += '-';
-  }
-  multiplicacao(){
-    this.expressao += '*';
-  }
-  divisao(){
-    this.expressao += '/'; 
-  }
-  bck(){
-    
-  }
-  calcular(){
-    this.resultado = eval(this.expressao);
-  }
-}
+};
